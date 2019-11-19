@@ -1,0 +1,41 @@
+{
+	"name": "dmzx/notifyuponreply",
+	"type": "phpbb-extension",
+	"description": "This extension add notify upon reply and a switch in UCP.",
+	"homepage": "https://www.dmzx-web.net",
+	"version": "1.0.1",
+	"time": "2019-11-19",
+	"keywords": [
+		"phpbb",
+		"extension",
+		"notifyuponreply"
+	],
+	"license": "GPL-2.0-only",
+	"authors": [
+		{
+			"name": "dmzx",
+			"homepage": "https://www.dmzx-web.net",
+			"email": "info@dmzx-web.net",
+			"role": "Extension Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.4",
+		"composer/installers": "~1.0"
+	},
+	"require-dev": {
+		"phpbb/epv": "dev-master"
+	},
+	"extra": {
+		"display-name": "Notify upon reply",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.2.0,<4.0.0@dev"
+		},
+		"version-check": {
+			"host": "www.dmzx-web.net",
+			"directory": "/versions",
+			"filename": "notifyuponreply_version.json",
+			"ssl": true
+		}
+	}
+}
