@@ -53,12 +53,12 @@ class listener implements EventSubscriberInterface
 
 	static public function getSubscribedEvents()
 	{
-		return array(
+		return [
 			'core.posting_modify_template_vars'		=> 'modify_template_vars',
 			'core.permissions'						=> 'add_permission',
 			'core.ucp_prefs_personal_data'			=> 'ucp_prefs_get_data',
 			'core.ucp_prefs_personal_update_data'	=> 'ucp_prefs_set_data',
-		);
+		];
 	}
 
 	public function modify_template_vars($event)
@@ -76,7 +76,7 @@ class listener implements EventSubscriberInterface
 	public function add_permission($event)
 	{
 		$permissions = $event['permissions'];
-		$permissions['u_notifyuponreply_switch'] = array('lang' => 'ACL_U_NOTIFYUPONREPLY_SWITCH', 'cat' => 'misc');
+		$permissions['u_notifyuponreply_switch'] = ['lang' => 'ACL_U_NOTIFYUPONREPLY_SWITCH', 'cat' => 'misc'];
 		$event['permissions'] = $permissions;
 	}
 
@@ -84,23 +84,23 @@ class listener implements EventSubscriberInterface
 	{
 		$this->user->add_lang_ext('dmzx/notifyuponreply', 'common');
 
-		$event['data'] = array_merge($event['data'], array(
+		$event['data'] = array_merge($event['data'], [
 			'notifyuponreply'	=> $this->request->variable('notifyuponreply', (int) $this->user->data['user_notifyuponreply']),
-		));
+		]);
 
 		if (!$event['submit'])
 		{
-			$this->template->assign_vars(array(
+			$this->template->assign_vars([
 				'S_UCP_NOTIFYUPONREPLY'		=> $event['data']['notifyuponreply'],
 				'USE_NOTIFYUPONREPLY'	 	=> $this->auth->acl_get('u_notifyuponreply_switch'),
-			));
+			]);
 		}
 	}
 
 	public function ucp_prefs_set_data($event)
 	{
-		$event['sql_ary'] = array_merge($event['sql_ary'], array(
+		$event['sql_ary'] = array_merge($event['sql_ary'], [
 			'user_notifyuponreply' 			=> $event['data']['notifyuponreply'],
-		));
+		]);
 	}
 }

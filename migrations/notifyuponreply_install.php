@@ -15,35 +15,35 @@ class notifyuponreply_install extends migration
 {
 	public function update_data()
 	{
-		return array(
+		return [
 
 			// Add permissions
-			array('permission.add', array('u_notifyuponreply_switch', true)),
+			['permission.add', ['u_notifyuponreply_switch', true]],
 
 			// Set permissions
-			array('permission.permission_set', array('ADMINISTRATORS', 'u_notifyuponreply_switch', 'group')),
-		);
+			['permission.permission_set', ['ADMINISTRATORS', 'u_notifyuponreply_switch', 'group']],
+		];
 	}
 
 	public function update_schema()
 	{
-		return array(
-			'add_columns'	=> array(
-				$this->table_prefix . 'users' => array(
-					'user_notifyuponreply'	=> array('BOOL', 1),
-				),
-			),
-		);
+		return [
+			'add_columns'	=> [
+				$this->table_prefix . 'users' => [
+					'user_notifyuponreply'	=> ['BOOL', 1],
+				],
+			],
+		];
 	}
 
 	public function revert_schema()
 	{
-		return 	array(
-			'drop_columns' => array(
-				$this->table_prefix . 'users'	=> array(
+		return 	[
+			'drop_columns' => [
+				$this->table_prefix . 'users'	=> [
 					'user_notifyuponreply',
-				),
-			),
-		);
+				],
+			],
+		];
 	}
 }
