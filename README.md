@@ -1,6 +1,6 @@
 # Notify upon reply Extension
 
-[![Build Status](https://travis-ci.org/dmzx/Notify-upon-reply.svg?branch=master)](https://travis-ci.org/dmzx/Notify-upon-reply)
+[![Build Status](https://github.com/dmzx/Notify-upon-reply/workflows/Tests/badge.svg)](https://github.com/phpbb-extensions/dmzx/Notify-upon-reply)
 
 ## Install
 1. Download the latest release.
