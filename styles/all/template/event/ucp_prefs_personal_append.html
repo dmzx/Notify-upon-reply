@@ -1,9 +1,9 @@
-<!-- IF USE_NOTIFYUPONREPLY -->
+{% if USE_NOTIFYUPONREPLY %}
 <dl>
-	<dt><label for="notifyuponreply1">{L_NOTIFYUPONREPLY}{L_COLON}</label></br><em>{L_NOTIFYUPONREPLY_EXPLAIN}</em></dt>
+	<dt><label for="notifyuponreply1">{{ lang('NOTIFYUPONREPLY') ~ lang('COLON') }}</label><br><em>{{ lang('NOTIFYUPONREPLY_EXPLAIN') }}</em></dt>
 	<dd>
-		<label for="notifyuponreply1"><input type="radio" name="notifyuponreply" id="notifyuponreply1" value="1"<!-- IF S_UCP_NOTIFYUPONREPLY --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
-		<label for="notifyuponreply0"><input type="radio" name="notifyuponreply" id="notifyuponreply0" value="0"<!-- IF not S_UCP_NOTIFYUPONREPLY --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+		<label for="notifyuponreply1"><input type="radio" name="notifyuponreply" id="notifyuponreply1" value="1"{% if S_UCP_NOTIFYUPONREPLY %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+		<label for="notifyuponreply0"><input type="radio" name="notifyuponreply" id="notifyuponreply0" value="0"{% if not S_UCP_NOTIFYUPONREPLY %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
 	</dd>
 </dl>
-<!-- ENDIF -->
+{% endif %}
