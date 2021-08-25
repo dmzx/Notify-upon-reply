@@ -9,7 +9,9 @@
 
 namespace dmzx\notifyuponreply\migrations;
 
-class notifyuponreply_v101 extends \phpbb\db\migration\migration
+use phpbb\db\migration\migration;
+
+class notifyuponreply_v101 extends migration
 {
 	static public function depends_on()
 	{

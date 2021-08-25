@@ -9,36 +9,40 @@
 
 namespace dmzx\notifyuponreply\event;
 
+use phpbb\auth\auth;
+use phpbb\request\request;
+use phpbb\template\template;
+use phpbb\user;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
 {
-	/** @var \phpbb\user */
+	/** @var user */
 	protected $user;
 
-	/** @var \phpbb\request\request */
+	/** @var request */
 	protected $request;
 
-	/** @var \phpbb\template\template */
+	/** @var template */
 	protected $template;
 
-	/** @var \phpbb\auth\auth */
+	/** @var auth */
 	protected $auth;
 
 	/**
 	* Constructor
 	*
-	* @param \phpbb\user						$user
-	* @param \phpbb\request\request 			$request
-	* @param \phpbb\template\template			$template
-	* @param \phpbb\auth\auth					$auth
+	* @param user				$user
+	* @param request 			$request
+	* @param template			$template
+	* @param auth				$auth
 	*
 	*/
 	public function __construct(
-		\phpbb\user $user,
-		\phpbb\request\request $request,
-		\phpbb\template\template $template,
-		\phpbb\auth\auth $auth
+		user $user,
+		request $request,
+		template $template,
+		auth $auth
 	)
 	{
 		$this->user			= $user;

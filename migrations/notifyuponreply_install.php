@@ -9,7 +9,9 @@
 
 namespace dmzx\notifyuponreply\migrations;
 
-class notifyuponreply_install extends \phpbb\db\migration\migration
+use phpbb\db\migration\migration;
+
+class notifyuponreply_install extends migration
 {
 	public function update_data()
 	{
