@@ -3,8 +3,8 @@
 	"type": "phpbb-extension",
 	"description": "This extension add notify upon reply and a switch in UCP.",
 	"homepage": "https://www.dmzx-web.net",
-	"version": "1.0.1",
-	"time": "2019-11-19",
+	"version": "1.0.2",
+	"time": "2021-08-25",
 	"keywords": [
 		"phpbb",
 		"extension",
