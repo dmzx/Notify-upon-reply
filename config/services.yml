@@ -1,10 +1,10 @@
 services:
     dmzx.notifyuponreply.listener:
-        class: dmzx\notifyuponreply\event\listener
+        class: 'dmzx\notifyuponreply\event\listener'
         arguments:
             - '@user'
             - '@request'
             - '@template'
             - '@auth'
         tags:
-            - { name: event.listener }            
+            - { name: 'event.listener' }
